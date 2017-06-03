@@ -1,0 +1,17 @@
+html {
+  background-color: lightblue;
+}
+
+div {
+  width: 30%;
+  height: 20%;
+  margin: auto;
+  position: /*absolute*/;
+  display: inline-flex;
+  top: 0; left: 0; bottom: 0; right: 0;
+  border: 2px solid darkblue;
+}
+
+p, form {
+  text-align: center;
+}
