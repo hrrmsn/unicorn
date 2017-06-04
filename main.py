@@ -21,7 +21,7 @@ def static(environ, start_response):
     content_type = constants.IMAGE_JPEG
 
   start_response('200 OK', tools.get_content_headers(content_type))
-  return [response_body.encode(constants.UTF8)]
+  return [response_body if file_path.endswith('.jpg') else response_body.encode(constants.UTF8)]
 
 
 def index(environ, start_response):
@@ -36,9 +36,26 @@ def not_found(environ, start_response):
   return [response_body.encode(constants.UTF8)]
 
 
+def greeting(environ, start_response):
+  try:
+    request_body_size = int(environ.get('CONTENT_LENGTH', 0))
+  except ValueError:
+    request_body_size = 0
+
+  request_body = environ['wsgi.input'].read(request_body_size)
+  request_body = request_body.lower()
+  selected_lang = re.match(r'language=(\w+)', request_body).group(1)
+
+
+
+  start_response('200 OK', tools.get_content_headers('text/plain'))
+  return [b'You chose the {} language!'.format(selected_lang)]
+
+
 regex_and_functions = [
   (r'/$', index),
-  (r'/static.*', static)
+  (r'/static.*', static),
+  (r'/greeting$', greeting)
 ]
 
 
@@ -51,6 +68,9 @@ def application(environ, start_response):
 
   # start_response('200 OK', tools.get_content_headers('text/plain'))
   # return [response_body.encode(constants.UTF8)]
+
+  # if environ['REQUEST_METHOD'].lower() == 'post':
+  #   return handle_post(environ, start_response)
 
   
   for regex_and_function in regex_and_functions:

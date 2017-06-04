@@ -1,17 +1,32 @@
-html {
-  background-color: lightblue;
+html, body {
+  background: lightblue;
+  font: 1em serif;
+  height: 97%;
 }
 
-div {
-  width: 30%;
-  height: 20%;
-  margin: auto;
-  position: /*absolute*/;
-  display: inline-flex;
-  top: 0; left: 0; bottom: 0; right: 0;
-  border: 2px solid darkblue;
+button {
+  border: 2px solid purple;
 }
 
-p, form {
+img {
+  width: 20%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+.box {
   text-align: center;
+  width: 30%;
 }
+
+.footer {
+  font: .8em sans-serif;
+  text-align: center;
+  padding-top: 10%;
+}
+

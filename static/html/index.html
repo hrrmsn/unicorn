@@ -6,12 +6,22 @@
     <link rel="stylesheet" type="text/css" href="static/css/index.css">
   </head>
   <body>
-    <div>
-      <p>Please select preferable language.</p>
-      <form action="" method="post">
-        <input type="radio" name="language" value="english">english
-        <input type="radio" name="language" value="russian">russian
-      </form>
+    <div class="container">
+      <div class="box">
+        <img src="static/pic/unicorn-normal.jpg">
+        <p>Please select preferable language.</p>
+        <form action="greeting" method="post">
+          <input type="radio" name="language" value="english">english
+          <input type="radio" name="language" value="russian">russian
+          <br><br>
+          <button type="submit">send</button>
+        </form>
+      </div>
     </div>
+    <footer class="footer">
+      <!-- &copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved. -->
+      &copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены.
+    </footer>
+    <script src="static/js/index.js"></script>
   </body>
 </html>

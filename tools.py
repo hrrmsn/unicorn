@@ -2,6 +2,8 @@
 
 import os
 
+import constants
+
 # Helper functions.
 
 def get_content_headers(content_type):
@@ -12,5 +14,5 @@ def readfile(filepath):
   file_content = 'Error when reading from the file: \'{}\'.'.format(filepath)
   if os.path.exists(filepath):
     with open(filepath, 'r') as f:
-      file_content = f.read()
+      file_content = f.read().decode(constants.UTF8)
   return file_content
