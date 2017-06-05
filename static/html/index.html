@@ -2,25 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hi, Kotolina! :)</title>
+    <title>{title}</title>
     <link rel="stylesheet" type="text/css" href="static/css/index.css">
   </head>
   <body>
     <div class="container">
       <div class="box">
         <img src="static/pic/unicorn-normal.jpg">
-        <p>Please select preferable language.</p>
+        <p>{paragraph_first}</p>
         <form action="greeting" method="post">
-          <input type="radio" name="language" value="english">english
-          <input type="radio" name="language" value="russian">russian
+          <input type="radio" name="language" value="english">{input_first}
+          <input type="radio" name="language" value="russian">{input_second}
           <br><br>
-          <button type="submit">send</button>
+          <button type="submit">{button_title}</button>
         </form>
       </div>
     </div>
     <footer class="footer">
-      <!-- &copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved. -->
-      &copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены.
+      {footer}
     </footer>
     <script src="static/js/index.js"></script>
   </body>

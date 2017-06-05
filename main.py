@@ -4,6 +4,7 @@ import re
 
 import tools
 import constants
+import templates
 
 
 # Entry points.
@@ -26,12 +27,14 @@ def static(environ, start_response):
 
 def index(environ, start_response):
   response_body = tools.readfile('static/html/index.html')
+  response_body = templates.apply('index', response_body, constants.SELECTED_LANG)
   start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
   return [response_body.encode(constants.UTF8)]
 
 
 def not_found(environ, start_response):
   response_body = tools.readfile('static/html/not-found.html')
+  response_body = templates.apply('not-found', response_body, constants.SELECTED_LANG)
   start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
   return [response_body.encode(constants.UTF8)]
 
@@ -44,12 +47,10 @@ def greeting(environ, start_response):
 
   request_body = environ['wsgi.input'].read(request_body_size)
   request_body = request_body.lower()
-  selected_lang = re.match(r'language=(\w+)', request_body).group(1)
-
-
+  constants.SELECTED_LANG = re.match(r'language=(\w+)', request_body).group(1)
 
   start_response('200 OK', tools.get_content_headers('text/plain'))
-  return [b'You chose the {} language!'.format(selected_lang)]
+  return [b'You chose the {} language!'.format(constants.SELECTED_LANG)]
 
 
 regex_and_functions = [
