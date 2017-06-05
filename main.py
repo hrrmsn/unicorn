@@ -27,14 +27,14 @@ def static(environ, start_response):
 
 def index(environ, start_response):
   response_body = tools.readfile('static/html/index.html')
-  response_body = templates.apply('index', response_body, constants.SELECTED_LANG)
+  response_body = templates.apply('index', response_body)
   start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
   return [response_body.encode(constants.UTF8)]
 
 
 def not_found(environ, start_response):
   response_body = tools.readfile('static/html/not-found.html')
-  response_body = templates.apply('not-found', response_body, constants.SELECTED_LANG)
+  response_body = templates.apply('not-found', response_body)
   start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
   return [response_body.encode(constants.UTF8)]
 

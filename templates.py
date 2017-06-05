@@ -3,7 +3,13 @@
 
 import constants
 
+
+#  Create dictionary with multilingual data.
+
 page_to_words = {}
+
+
+# Multilingual data for the 'not-found' page.
 
 page_to_words['not-found'] = {
   'english': {
@@ -19,6 +25,9 @@ page_to_words['not-found'] = {
     'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   }  
 }
+
+
+# Multilingual data for the 'index' page.
 
 page_to_words['index'] = {
   'english': {
@@ -39,9 +48,10 @@ page_to_words['index'] = {
   }
 }
 
-def apply(page_name, page_html, selected_language):
+
+def apply(page_name, page_html):
   page_dictionary = page_to_words[page_name]
-  in_specified_lang = page_dictionary[selected_language]
-  if selected_language == 'russian':
+  in_specified_lang = page_dictionary[constants.SELECTED_LANG]
+  if constants.SELECTED_LANG == 'russian':
     in_specified_lang = {key: value.decode(constants.UTF8) for key, value in in_specified_lang.items()}
   return page_html.format(**in_specified_lang)
