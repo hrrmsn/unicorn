@@ -49,8 +49,11 @@ def greeting(environ, start_response):
   request_body = request_body.lower()
   constants.SELECTED_LANG = re.match(r'language=(\w+)', request_body).group(1)
 
-  start_response('200 OK', tools.get_content_headers('text/plain'))
-  return [b'You chose the {} language!'.format(constants.SELECTED_LANG)]
+  response_body = tools.readfile('static/html/greeting.html')
+  response_body = templates.apply('greeting', response_body)
+
+  start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
+  return [response_body.encode(constants.UTF8)]
 
 
 regex_and_functions = [

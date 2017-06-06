@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+  #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import constants
@@ -43,6 +43,35 @@ page_to_words['index'] = {
     'paragraph_first': """Пожалуйста, выберите предпочтительный язык.""",
     'input_first': """английский""",
     'input_second': """русский""",
+    'button_title': """клик""",
+    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
+  }
+}
+
+
+# Multilingual data for the 'greeting' page.
+
+page_to_words['greeting'] = {
+  'english': {
+    'title': """A simple check""",
+    'paragraph_first': """First of all, we need to sure that you're a real caticorn. So are you the caticorn?""",
+    'paragraph_second': """Please say only true! (We have a special polygraph for the caticorns.)""",
+    'radio_button_first': """I'm a real caticorn. (Meow!)""",
+    'radio_button_second': """Maybe I'm a caticorn. I don't know exactly. (What's going on?)""",
+    'radio_button_third': """No. I'm a usual person. (I use subway. I sleep and eat every day.)""",
+    'radio_button_fourth': """Who is a caticorn? (You guys are crazy.)""",
+    'button_title': """send""",
+    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
+  },
+  'russian': {
+    'title': """Простая проверка""",
+    'paragraph_first': """Прежде всего, нам бы хотелось убедиться, что вы настоящий единокот.<br>Итак, вы точно 
+      единокот? Пожалуйста, говорите только правду!""",
+    'paragraph_second': """(Мы располагаем специальным полиграфом для единокотов.)""",
+    'radio_button_first': """Да, я единокот. (Мяу!)""",
+    'radio_button_second': """Возможно, я единокот. Я точно не знаю. (Я не понимаю, что происходит.)""",
+    'radio_button_third': """Нет, я обыкновенный человек. (Езжу в метро. Ем. Сплю.)""",
+    'radio_button_fourth': """Кто такой единокот? (Вы, ребята, совсем сумасшедшие.)""",
     'button_title': """клик""",
     'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   }

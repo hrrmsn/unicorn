@@ -1,0 +1,41 @@
+html, body {
+  background: lightblue;
+  font: 1em serif;
+  height: 97%;
+}
+
+button {
+  border: 2px solid purple;
+}
+
+img {
+  width: 14%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+.box {
+  text-align: center;
+  width: 50%;
+}
+
+.inner-box {
+  text-align: left;
+  padding-left: 10%;
+}
+
+.button {
+  padding-left: 40%;
+}
+
+.footer {
+  font: .8em sans-serif;
+  text-align: center;
+  padding-top: 10%;
+}
+

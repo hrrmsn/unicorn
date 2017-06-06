@@ -2,17 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="static/css/greeting.css">
     <title>{title}</title>
   </head>
   <body>
     <div class="container">
       <div class="box">
         <img src="static/pic/caticorn.jpg">
-        <p>First of all, we need to sure that you're a real caticorn. So are you the caticorn?</p>
-        <p>Please say only true! (We have a special polygraph for the caticorns.)</p>
-        <button id="yes-button" type="button">{first_button_title}</button>
-        <button id="no-button" type="button">{second_button_title}</button>
+        <p>{paragraph_first}</p>
+        <p>{paragraph_second}</p>
+        <div class="inner-box">
+          <form action="test" method="post">
+            <input type="radio" name="answer" value="yes">{radio_button_first}
+            <br>
+            <input type="radio" name="answer" value="maybe">{radio_button_second}
+            <br>
+            <input type="radio" name="answer" value="no">{radio_button_third}
+            <br>
+            <input type="radio" name="answer" value="whois">{radio_button_fourth} 
+            <br><br>
+            <div class="button">
+              <button type="submit">{button_title}</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <footer class="footer">
