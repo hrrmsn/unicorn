@@ -6,7 +6,15 @@
     <link rel="stylesheet" type="text/css" href="static/css/index.css">
   </head>
   <body>
+    <wsgi-function>not-found</wsgi-function>
     <div class="container">
+      <div class="language">
+        <label for="language">{label}:</label>
+        <select class="option" id="language">
+          <option value="english">{select_english_option}</option>
+          <option value="russian">{select_russian_option}</option>
+        </select>
+      </div>    
       <div class="box">
         <img src="static/pic/unicorn-sad.jpg">
         <p>{paragraph_first}</p> 
@@ -16,5 +24,6 @@
     <footer class="footer">
       {footer}
     </footer>
+    <script src="static/js/select-language.js"></script>
   </body>
 </html>

@@ -3,10 +3,19 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="static/css/greeting.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <title>{title}</title>
   </head>
   <body>
+    <wsgi-function>greeting</wsgi-function>
     <div class="container">
+      <div class="language">
+        <label for="language">{label}:</label>
+        <select class="option" id="language">
+          <option value="english">{select_english_option}</option>
+          <option value="russian">{select_russian_option}</option>
+        </select>
+      </div>
       <div class="box">
         <img src="static/pic/caticorn.jpg">
         <p>{paragraph_first}</p>
@@ -31,5 +40,6 @@
     <footer class="footer">
       {footer}
     </footer>
+    <script src="static/js/select-language.js"></script>
   </body>
 </html>

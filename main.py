@@ -33,6 +33,8 @@ def index(environ, start_response):
 
 
 def not_found(environ, start_response):
+  tools.check_query_string(environ)
+
   response_body = tools.readfile('static/html/not-found.html')
   response_body = templates.apply('not-found', response_body)
   start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
@@ -45,9 +47,12 @@ def greeting(environ, start_response):
   except ValueError:
     request_body_size = 0
 
+  tools.check_query_string(environ)
+
   request_body = environ['wsgi.input'].read(request_body_size)
-  request_body = request_body.lower()
-  constants.SELECTED_LANG = re.match(r'language=(\w+)', request_body).group(1)
+  if request_body:
+    request_body = request_body.lower()
+    constants.SELECTED_LANG = re.match(r'language=(\w+)', request_body).group(1)
 
   response_body = tools.readfile('static/html/greeting.html')
   response_body = templates.apply('greeting', response_body)
