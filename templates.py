@@ -90,6 +90,82 @@ page_to_words['greeting'] = {
 }
 
 
+# Multilingual data for the 'catification/whois' page.
+
+page_to_words['catif-whois'] = {
+  'english': {
+    'title': """Who are the caticorns?""",
+    'label': """language""",
+    'select_english_option': """english""",
+    'select_russian_option': """russian""",
+    'paragraph': """Caticorns are the magic cute creatures. They live in Catiland.<br>They like chocolate, milk and 
+      psychology.<br>(And also they like the unicorns. And the unicorns like caticorns.)""",
+    'button_title': """back""",
+    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
+  },
+  'russian': {
+    'title': """Кто такие единокоты?""",
+    'label': """язык""",
+    'select_english_option': """английский""",
+    'select_russian_option': """русский""",
+    'paragraph': """Единокоты это милые волшебные существа. Они живут в Котоландии и любят шоколад, молоко, 
+      психологию.<br>(И единорогов. А единороги их.)""",
+    'button_title': """назад""",
+    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
+  }
+}
+
+
+# Multilingual data for the 'catification/no' page.
+
+page_to_words['catif-no'] = {
+  'english': {
+    'title': """Sorry, the unicorns don't like usual people.""",
+    'label': """language""",
+    'select_english_option': """english""",
+    'select_russian_option': """russian""",
+    'paragraph': """Oh, it's so sad that you're an usual person! Unfortunately, you should leave this place. You should 
+      do your usual human chores.""",
+    'button_title': """back""",
+    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
+  },
+  'russian': {
+    'title': """Единороги не любят обычных людей.""",
+    'label': """язык""",
+    'select_english_option': """английский""",
+    'select_russian_option': """русский""",
+    'paragraph': """О, это так грустно, что вы обычный человек! К сожалению, вы должны покинуть это место. Вам 
+      необходимо заняться обыкновенными человеческими делами.""",
+    'button_title': """назад""",
+    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
+  }
+}
+
+
+# Multilingual data for the 'catification/maybe' page.
+
+page_to_words['catif-maybe'] = {
+  'english': {
+    'title': """You don't know who are you?""",
+    'label': """language""",
+    'select_english_option': """english""",
+    'select_russian_option': """russian""",
+    'paragraph': """You need to be more opinionated. It's very important. Believe me!""",
+    'button_title': """back""",
+    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
+  },
+  'russian': {
+    'title': """Вы не знаете, кто вы?""",
+    'label': """язык""",
+    'select_english_option': """английский""",
+    'select_russian_option': """русский""",
+    'paragraph': """Вам надо быть более уверенным человеком.<br>Это важно, поверьте мне!""",
+    'button_title': """назад""",
+    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
+  }
+}
+
+
 def apply(page_name, page_html):
   page_dictionary = page_to_words[page_name]
   in_specified_lang = page_dictionary[constants.SELECTED_LANG]

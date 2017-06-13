@@ -42,13 +42,7 @@ def not_found(environ, start_response):
 
 
 def greeting(environ, start_response):
-  try:
-    request_body_size = int(environ.get('CONTENT_LENGTH', 0))
-  except ValueError:
-    request_body_size = 0
-
-  tools.check_query_string(environ)
-
+  request_body_size = tools.check_query_string(environ)
   request_body = environ['wsgi.input'].read(request_body_size)
   if request_body:
     request_body = request_body.lower()
@@ -61,10 +55,69 @@ def greeting(environ, start_response):
   return [response_body.encode(constants.UTF8)]
 
 
+def catification(environ, start_response):
+  request_body_size = tools.check_query_string(environ)
+  request_body = environ['wsgi.input'].read(request_body_size)
+  request_body = request_body.lower()
+  answer = re.match(r'answer=([\w-]+)', request_body).group(1)
+
+  response_body = tools.readfile('static/html/catification/{}.html'.format(answer))
+  response_body = templates.apply(answer, response_body)
+
+  start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
+  return [response_body.encode(constants.UTF8)]
+
+
+def catif_whois(environ, start_response):
+  request_body_size = tools.check_query_string(environ)
+  request_body = environ['wsgi.input'].read(request_body_size)
+  if request_body:
+    request_body = request_body.lower()
+    constants.SELECTED_LANG = re.match(r'language=(\w+)', request_body).group(1)
+
+  response_body = tools.readfile('static/html/catification/catif-whois.html')
+  response_body = templates.apply('catif-whois', response_body)
+
+  start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
+  return [response_body.encode(constants.UTF8)]
+
+
+def catif_no(environ, start_response):
+  request_body_size = tools.check_query_string(environ)
+  request_body = environ['wsgi.input'].read(request_body_size)
+  if request_body:
+    request_body = request_body.lower()
+    constants.SELECTED_LANG = re.match(r'language=(\w+)', request_body).group(1)
+
+  response_body = tools.readfile('static/html/catification/catif-no.html')
+  response_body = templates.apply('catif-no', response_body)
+
+  start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
+  return [response_body.encode(constants.UTF8)]
+
+
+def catif_maybe(environ, start_response):
+  request_body_size = tools.check_query_string(environ)
+  request_body = environ['wsgi.input'].read(request_body_size)
+  if request_body:
+    request_body = request_body.lower()
+    constants.SELECTED_LANG = re.match(r'language=(\w+)', request_body).group(1)
+
+  response_body = tools.readfile('static/html/catification/catif-maybe.html')
+  response_body = templates.apply('catif-maybe', response_body)
+
+  start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
+  return [response_body.encode(constants.UTF8)]  
+
+
 regex_and_functions = [
   (r'/$', index),
   (r'/static.*', static),
-  (r'/greeting$', greeting)
+  (r'/greeting$', greeting),
+  (r'/catification$', catification),
+  (r'/catif-whois$', catif_whois),
+  (r'/catif-no$', catif_no),
+  (r'/catif-maybe', catif_maybe)
 ]
 
 

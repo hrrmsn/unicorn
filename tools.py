@@ -19,7 +19,14 @@ def readfile(filepath):
 
 
 def check_query_string(environ):
+  try:
+    request_body_size = int(environ.get('CONTENT_LENGTH', 0))
+  except ValueError:
+    request_body_size = 0
+
   if environ['QUERY_STRING'] == 'lang=rus':
     constants.SELECTED_LANG = 'russian'
   elif environ['QUERY_STRING'] == 'lang=eng':
-    constants.SELECTED_LANG = 'english'  
+    constants.SELECTED_LANG = 'english'
+
+  return request_body_size
