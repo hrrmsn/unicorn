@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="static/css/index.css">
   </head>
   <body>
-    <wsgi-function>not-found</wsgi-function>
+    <wsgi-function class="wsgi">not-found</wsgi-function>
     <div class="container">
       <div class="language">
         <label for="language">{label}:</label>
@@ -20,10 +20,12 @@
         <p>{paragraph_first}</p> 
         <p>{paragraph_second}</p>
       </div>
+      <div class="footer">
+        <footer>
+          {footer}
+        </footer>
+      </div>
     </div>
-    <footer class="footer">
-      {footer}
-    </footer>
     <script src="static/js/select-language.js"></script>
   </body>
 </html>
