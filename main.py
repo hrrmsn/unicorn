@@ -68,71 +68,51 @@ def catification(environ, start_response):
   return [response_body.encode(constants.UTF8)]
 
 
-def catif_whois(environ, start_response):
+def catif_manager(environ, start_response):
   request_body_size = tools.check_query_string(environ)
   request_body = environ['wsgi.input'].read(request_body_size)
   if request_body:
     request_body = request_body.lower()
     constants.SELECTED_LANG = re.match(r'language=(\w+)', request_body).group(1)
 
-  response_body = tools.readfile('static/html/catification/catif-whois.html')
-  response_body = templates.apply('catif-whois', response_body)
+  wsgi_function = environ['PATH_INFO'].strip('/')
+
+  response_body = tools.readfile('static/html/catification/{}.html'.format(wsgi_function))
+  response_body = templates.apply(wsgi_function, response_body)
 
   start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
   return [response_body.encode(constants.UTF8)]
 
 
-def catif_no(environ, start_response):
-  request_body_size = tools.check_query_string(environ)
-  request_body = environ['wsgi.input'].read(request_body_size)
-  if request_body:
-    request_body = request_body.lower()
-    constants.SELECTED_LANG = re.match(r'language=(\w+)', request_body).group(1)
-
-  response_body = tools.readfile('static/html/catification/catif-no.html')
-  response_body = templates.apply('catif-no', response_body)
-
-  start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
-  return [response_body.encode(constants.UTF8)]
-
-
-def catif_maybe(environ, start_response):
-  request_body_size = tools.check_query_string(environ)
-  request_body = environ['wsgi.input'].read(request_body_size)
-  if request_body:
-    request_body = request_body.lower()
-    constants.SELECTED_LANG = re.match(r'language=(\w+)', request_body).group(1)
-
-  response_body = tools.readfile('static/html/catification/catif-maybe.html')
-  response_body = templates.apply('catif-maybe', response_body)
-
-  start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
-  return [response_body.encode(constants.UTF8)]  
+def test(environ, start_response):
+  pass
 
 
 regex_and_functions = [
   (r'/$', index),
-  (r'/static.*', static),
+  (r'/static', static),
   (r'/greeting$', greeting),
   (r'/catification$', catification),
-  (r'/catif-whois$', catif_whois),
-  (r'/catif-no$', catif_no),
-  (r'/catif-maybe', catif_maybe)
+  (r'/catif-whois$', catif_manager),
+  (r'/catif-no$', catif_manager),
+  (r'/catif-maybe$', catif_manager),
+  (r'/catif-yes$', catif_manager),
+  (r'/test$', test)
 ]
 
 
 # Main function of WSGI app.
 
 def application(environ, start_response):
-  # response_body = ''
-  # for key in environ:
-  #   response_body += '{} -> {}\n'.format(key, str(environ[key]))
+  response_body = ''
+  for key in environ:
+    response_body += '{} -> {}\n'.format(key, str(environ[key]))
 
-  # start_response('200 OK', tools.get_content_headers('text/plain'))
-  # return [response_body.encode(constants.UTF8)]
+  start_response('200 OK', tools.get_content_headers('text/plain'))
+  return [response_body.encode(constants.UTF8)]
 
-  # if environ['REQUEST_METHOD'].lower() == 'post':
-  #   return handle_post(environ, start_response)
+  if environ['REQUEST_METHOD'].lower() == 'post':
+    return handle_post(environ, start_response)
 
   
   for regex_and_function in regex_and_functions:

@@ -59,7 +59,7 @@ page_to_words['index'] = {
 
 page_to_words['greeting'] = {
   'english': {
-    'title': """A simple check""",
+    'title': """A simple check.""",
     'label': """language""",
     'select_english_option': """english""",
     'select_russian_option': """russian""",
@@ -73,7 +73,7 @@ page_to_words['greeting'] = {
     'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
   },
   'russian': {
-    'title': """Простая проверка""",
+    'title': """Простая проверка.""",
     'label': """язык""",
     'select_english_option': """английский""",
     'select_russian_option': """русский""",
@@ -109,7 +109,7 @@ page_to_words['catif-whois'] = {
     'select_english_option': """английский""",
     'select_russian_option': """русский""",
     'paragraph': """Единокоты это милые волшебные существа. Они живут в Котоландии и любят шоколад, молоко, 
-      психологию.<br>(И единорогов. А единороги их.)""",
+      психологию.<br>(И единорогов. А единороги - их.)""",
     'button_title': """назад""",
     'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   }
@@ -161,6 +161,34 @@ page_to_words['catif-maybe'] = {
     'select_russian_option': """русский""",
     'paragraph': """Вам надо быть более уверенным человеком.<br>Это важно, поверьте мне!""",
     'button_title': """назад""",
+    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
+  }
+}
+
+
+# Multilingual data for the 'catification/yes' page.
+
+page_to_words['catif-yes'] = {
+  'english': {
+    'title': """Yay! Maybe you're a real caticorn!""",
+    'label': """language""",
+    'select_english_option': """english""",
+    'select_russian_option': """russian""",
+    'paragraph': """We would suggest you pass a simple test to sure that you know enough about the unicorns.<br>(No one 
+      unicorn was hurt during this test creation.)""",
+    'button_title_first': """back""",
+    'button_title_second': """start""",
+    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
+  },
+  'russian': {
+    'title': """Ура! Наконец-то здесь потенциальный единокот!""",
+    'label': """язык""",
+    'select_english_option': """английский""",
+    'select_russian_option': """русский""",
+    'paragraph': """Мы предлагаем вам пройти тест на знание единорогов.<br>(При подготовке данного теста ни один 
+      единорог не пострадал.)""",
+    'button_title_first': """назад""",
+    'button_title_second': """начать""",
     'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   }
 }

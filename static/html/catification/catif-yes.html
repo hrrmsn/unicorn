@@ -7,7 +7,7 @@
     <title>{title}</title>
   </head>
   <body>
-    <wsgi-function class="wsgi">catif-whois</wsgi-function>
+    <wsgi-function class="wsgi">catif-yes</wsgi-function>
     <div class="container">
       <div class="language">
         <label for="language">{label}:</label>
@@ -17,11 +17,12 @@
         </select>
       </div>
       <div class="box">
-        <img src="static/pic/catification/who-are-the-caticorns.jpg">
+        <img src="static/pic/catification/caticorn-excited.jpg">
         <p>{paragraph}</p>
         <div class="inner-box">
-          <div class="button-border">
-            <button>{button_title}</button>
+          <div class="button-border button-margin">
+            <button id="back-button">{button_title_first}</button>
+            <button id="start-button">{button_title_second}</button>
           </div>
         </div>
       </div>
@@ -32,6 +33,6 @@
       </div>
     </div>
     <script src="static/js/select-language.js"></script>
-    <script src="static/js/catification/back-to-greeting.js"></script>
+    <script src="static/js/catification/catif-yes.js"></script>
   </body>
 </html>
