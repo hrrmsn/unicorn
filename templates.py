@@ -202,8 +202,8 @@ page_to_words['test'] = {
     'label': """language""",
     'select_english_option': """english""",
     'select_russian_option': """russian""",
-    'paragraph': """Please be careful and attentive! The result of this test is very important.<br>(We will give you a 
-      special unicorn's license<br>if your score will be more than 8/10. Good luck!)""",
+    'paragraph': """Please be careful and attentive! The result of this test is very important. (We will give you a 
+      special unicorn's license if your score will be more than 8/10. Good luck!)""",
 
     'first_question_label': """1. Who are the unicorns?""",
     'first_question_option_one': """I don't know.""",
@@ -223,8 +223,8 @@ page_to_words['test'] = {
     'fourth_question_label': """4. Do unicorns love caticorns?""",
     'fourth_question_option_one': """Yes. (Quietly and hesitantly.)""",
     'fourth_question_option_two': """Of course. (Muffled.)""",
-    'fourth_question_option_three': """Definetly yes! Oh my god, the unicorns love caticorns so much! (Very loudly and 
-      expressively.)""",
+    'fourth_question_option_three': """Definetly yes! Oh my god, the unicorns love caticorns so much! (Very loudly 
+      and expressively.)""",
 
     'fifth_question_label': """5. What kind of music do unicorns prefer?""",
     'fifth_question_option_one': """They like music of Stanislav Mikhaylov.""",
@@ -235,7 +235,7 @@ page_to_words['test'] = {
     'sixth_question_label': """6. Do unicorns like to cook?""",
     'sixth_question_option_one': """No, they don't. (There are a lot of super markets with prepared food.)""",
     'sixth_question_option_two': """They cook every day! (Oh, the cooking is happiness.)""",
-    'sixth_question_option_three': """The caticorns will cook for unicorns. (*heart smiley*)""",
+    'sixth_question_option_three': """The caticorns will cook for unicorns. <span class="red-heart">&hearts;</span>""",
 
     'seventh_question_label': """7. The unicorns are perfect pilots of the space ships, aren't they?""",
     'seventh_question_option_one': """Maybe. (I have some doubts.)""",
@@ -255,7 +255,7 @@ page_to_words['test'] = {
     'tenth_question_label': """10. The unicorn entered to a room and he is smiling. Why?""",
     'tenth_question_option_one': """He gone crazy!""",
     'tenth_question_option_two': """Just for fun.""",
-    'tenth_question_option_three': """The caticorn is inside this room. (*love smiley*)""",    
+    'tenth_question_option_three': """The caticorn is inside this room. <span class="red-heart">&hearts;</span>""",    
 
     'button_title': """check""",
     'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
@@ -298,7 +298,8 @@ page_to_words['test'] = {
     'sixth_question_label': """6. Любят ли единороги готовить?""",
     'sixth_question_option_one': """Нет, не любят. (Ведь так много магазинов с готовой едой!)""",
     'sixth_question_option_two': """Они готовят каждый день! (О, кулинария это счастье.)""",
-    'sixth_question_option_three': """Единокотики станут готовить для единорогов. (*смайлик-сердечко*)""",
+    'sixth_question_option_three': """Единокотики станут готовить для единорогов. <span class="red-heart">&hearts;
+      </span>""",
 
     'seventh_question_label': """7. Единороги отличные пилоты космических кораблей, не так ли?""",
     'seventh_question_option_one': """Возможно. (У меня есть сомнения.)""",
@@ -318,11 +319,11 @@ page_to_words['test'] = {
     'tenth_question_label': """10. Единорог вошел в комнату и улыбается. Почему?""",
     'tenth_question_option_one': """Он сошел с ума!""",
     'tenth_question_option_two': """Просто для удовольствия.""",
-    'tenth_question_option_three': """В комнате есть единокот. (*смайлик-сердечко*)""",
+    'tenth_question_option_three': """В комнате есть единокот. <span class="red-heart">&hearts;</span>""",
 
 
     'button_title': """проверить""",
-    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
+    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   },
 }
 
