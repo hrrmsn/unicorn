@@ -1,4 +1,4 @@
-// Helper function definitions are here.
+// Variable definitions are here.
 
 var languageLabelTextContent = document.querySelector('label').textContent;
 
@@ -7,6 +7,36 @@ var englishSelectOption = selectLanguage[0];
 var russianSelectOption = selectLanguage[1];
 
 var wsgiFunctionName = document.querySelector('wsgi-function').textContent;
+
+
+// Helper function definitions are here.
+
+function sendPostRequest(requestUrl, parameters) {
+  var form = document.createElement('form');
+  form.setAttribute('method', 'post');
+  form.setAttribute('action', requestUrl);
+
+  for (var property in parameters) {
+    if (parameters.hasOwnProperty(property)) {
+      var inputField = document.createElement('input');
+      inputField.setAttribute('type', 'hidden');
+      inputField.setAttribute('name', property);
+      inputField.setAttribute('value', parameters[property]);
+
+      form.appendChild(inputField);
+    }
+  }
+
+  document.body.appendChild(form);
+  form.submit();
+}
+
+function getSelectedLanguage() {
+  if (languageLabelTextContent === 'language:') {
+    return 'english';
+  }
+  return 'russian';
+}
 
 
 // Add event listeners here.
@@ -20,9 +50,16 @@ window.addEventListener('load', function(e) {
 });
 
 selectLanguage.addEventListener('change', function(e) {
-  var selectedLanguage = 'eng';
-  if (e.target.value === 'russian') {
-    selectedLanguage = 'rus';
+  var selectedLanguage = 'russian';
+  if (e.target.value === 'english') {
+    selectedLanguage = 'english';
   }
-  window.location = "http://localhost:8000/" + wsgiFunctionName + '?lang=' + selectedLanguage;
+  requestUrl = 'http://localhost:8000/';
+  parameters = {'answer': wsgiFunctionName, 'language': selectedLanguage};
+  if (wsgiFunctionName.substring(0, 5) === 'catif') {
+    requestUrl += 'catification';
+  } else {
+    requestUrl += wsgiFunctionName;
+  }
+  sendPostRequest(requestUrl, parameters);
 });

@@ -28,91 +28,54 @@ def static(environ, start_response):
 def index(environ, start_response):
   response_body = tools.readfile('static/html/index.html')
   response_body = templates.apply('index', response_body)
+
   start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
   return [response_body.encode(constants.UTF8)]
 
 
 def not_found(environ, start_response):
-  tools.check_query_string(environ)
+  tools.check_post_request(environ)
 
   response_body = tools.readfile('static/html/not-found.html')
   response_body = templates.apply('not-found', response_body)
-  start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
-  return [response_body.encode(constants.UTF8)]
-
-
-def greeting(environ, start_response):
-  request_body_size = tools.check_query_string(environ)
-  request_body = environ['wsgi.input'].read(request_body_size)
-  if request_body:
-    request_body = request_body.lower()
-    constants.SELECTED_LANG = re.match(r'language=(\w+)', request_body).group(1)
-
-  response_body = tools.readfile('static/html/greeting.html')
-  response_body = templates.apply('greeting', response_body)
 
   start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
   return [response_body.encode(constants.UTF8)]
 
 
 def catification(environ, start_response):
-  request_body_size = tools.check_query_string(environ)
-  request_body = environ['wsgi.input'].read(request_body_size)
-  request_body = request_body.lower()
-  answer = re.match(r'answer=([\w-]+)', request_body).group(1)
+  answer_type = tools.check_post_request(environ)
 
-  response_body = tools.readfile('static/html/catification/{}.html'.format(answer))
-  response_body = templates.apply(answer, response_body)
+  print 'answer_type=\'{}\''.format(answer_type)
 
-  start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
-  return [response_body.encode(constants.UTF8)]
+  response_template = 'static/html/catification/{}.html' if 'catif' in answer_type else 'static/html/{}.html'
 
-
-def catif_manager(environ, start_response):
-  request_body_size = tools.check_query_string(environ)
-  request_body = environ['wsgi.input'].read(request_body_size)
-  if request_body:
-    request_body = request_body.lower()
-    constants.SELECTED_LANG = re.match(r'language=(\w+)', request_body).group(1)
-
-  wsgi_function = environ['PATH_INFO'].strip('/')
-
-  response_body = tools.readfile('static/html/catification/{}.html'.format(wsgi_function))
-  response_body = templates.apply(wsgi_function, response_body)
+  response_body = tools.readfile(response_template.format(answer_type))
+  response_body = templates.apply(answer_type, response_body)
 
   start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
   return [response_body.encode(constants.UTF8)]
-
-
-def test(environ, start_response):
-  pass
 
 
 regex_and_functions = [
   (r'/$', index),
   (r'/static', static),
-  (r'/greeting$', greeting),
-  (r'/catification$', catification),
-  (r'/catif-whois$', catif_manager),
-  (r'/catif-no$', catif_manager),
-  (r'/catif-maybe$', catif_manager),
-  (r'/catif-yes$', catif_manager),
-  (r'/test$', test)
+  (r'(/greeting$)|(/catification$)|(/test$)', catification)
 ]
 
 
 # Main function of WSGI app.
 
 def application(environ, start_response):
-  response_body = ''
-  for key in environ:
-    response_body += '{} -> {}\n'.format(key, str(environ[key]))
+  # response_body = ''
+  # for key in environ:
+  #   response_body += '{} -> {}\n'.format(key, str(environ[key]))
 
-  start_response('200 OK', tools.get_content_headers('text/plain'))
-  return [response_body.encode(constants.UTF8)]
+  # start_response('200 OK', tools.get_content_headers('text/plain'))
+  # return [response_body.encode(constants.UTF8)]
 
-  if environ['REQUEST_METHOD'].lower() == 'post':
-    return handle_post(environ, start_response)
+  # if environ['REQUEST_METHOD'].lower() == 'post':
+  #   return handle_post(environ, start_response)
 
   
   for regex_and_function in regex_and_functions:

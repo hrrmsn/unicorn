@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="static/css/test.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <title>{title}</title>
+  </head>
+  <body>
+    <wsgi-function class="wsgi">test</wsgi-function>
+    <div class="container">
+      <div class="language">
+        <label for="language">{label}:</label>
+        <select class="option" id="language">
+          <option value="english">{select_english_option}</option>
+          <option value="russian">{select_russian_option}</option>
+        </select>
+      </div>
+      <div class="box">
+        <img src="static/pic/unicorn-for-test.jpg">
+        <p>{paragraph}</p>
+        <div class="form">
+          <form action="/result" method="post">
+            <label for="first_question">{first_question_label}</label>
+            <br>
+            <input id="first_question" type="radio" name="first_question" value="one">{first_question_option_one}
+            <br>
+            <input id="first_question" type="radio" name="first_question" value="two">{first_question_option_two}
+            <br>
+            <input id="first_question" type="radio" name="first_question" value="three">{first_question_option_three}
+            <br><br>
+
+            <label for="second_question">{second_question_label}</label>
+            <br>
+            <input id="second_question" type="radio" name="second_question" value="one">{second_question_option_one}
+            <br>
+            <input id="second_question" type="radio" name="second_question" value="two">{second_question_option_two}
+            <br>
+            <input id="second_question" type="radio" name="second_question" value="three">{second_question_option_three}
+            <br><br>
+
+            <label for="third_question">{third_question_label}</label>
+            <br>
+            <input id="third_question" type="radio" name="third_question" value="one">{third_question_option_one}
+            <br>
+            <input id="third_question" type="radio" name="third_question" value="two">{third_question_option_two}
+            <br>
+            <input id="third_question" type="radio" name="third_question" value="three">{third_question_option_three}
+            <br><br>
+
+            <label for="fourth_question">{fourth_question_label}</label>
+            <br>
+            <input id="fourth_question" type="radio" name="fourth_question" value="one">{fourth_question_option_one}
+            <br>
+            <input id="fourth_question" type="radio" name="fourth_question" value="two">{fourth_question_option_two}
+            <br>
+            <input id="fourth_question" type="radio" name="fourth_question" value="three">{fourth_question_option_three}
+            <br><br>
+
+            <label for="fifth_question">{fifth_question_label}</label>
+            <br>
+            <input id="fifth_question" type="radio" name="fifth_question" value="one">{fifth_question_option_one}
+            <br>
+            <input id="fifth_question" type="radio" name="fifth_question" value="two">{fifth_question_option_two}
+            <br>
+            <input id="fifth_question" type="radio" name="fifth_question" value="three">{fifth_question_option_three}
+            <br><br>
+
+            <label for="sixth_question">{sixth_question_label}</label>
+            <br>
+            <input id="sixth_question" type="radio" name="sixth_question" value="one">{sixth_question_option_one}
+            <br>
+            <input id="sixth_question" type="radio" name="sixth_question" value="two">{sixth_question_option_two}
+            <br>
+            <input id="sixth_question" type="radio" name="sixth_question" value="three">{sixth_question_option_three}
+            <br><br>    
+
+            <label for="seventh_question">{seventh_question_label}</label>
+            <br>
+            <input id="seventh_question" type="radio" name="seventh_question" value="one">
+            {seventh_question_option_one}
+            <br>
+            <input id="seventh_question" type="radio" name="seventh_question" value="two">
+            {seventh_question_option_two}
+            <br>
+            <input id="seventh_question" type="radio" name="seventh_question" value="three">
+            {seventh_question_option_three}
+            <br><br>
+
+            <label for="eighth_question">{eighth_question_label}</label>
+            <br>
+            <input id="eighth_question" type="radio" name="eighth_question" value="one">{eighth_question_option_one}
+            <br>
+            <input id="eighth_question" type="radio" name="eighth_question" value="two">{eighth_question_option_two}
+            <br>
+            <input id="eighth_question" type="radio" name="eighth_question" value="three">{eighth_question_option_three}
+            <br><br>
+
+            <label for="ninth_question">{ninth_question_label}</label>
+            <br>
+            <input id="ninth_question" type="radio" name="ninth_question" value="one">{ninth_question_option_one}
+            <br>
+            <input id="ninth_question" type="radio" name="ninth_question" value="two">{ninth_question_option_two}
+            <br>
+            <input id="ninth_question" type="radio" name="ninth_question" value="three">{ninth_question_option_three}
+            <br><br>
+
+            <label for="tenth_question">{tenth_question_label}</label>
+            <br>
+            <input id="tenth_question" type="radio" name="tenth_question" value="one">{tenth_question_option_one}
+            <br>
+            <input id="tenth_question" type="radio" name="tenth_question" value="two">{tenth_question_option_two}
+            <br>
+            <input id="tenth_question" type="radio" name="tenth_question" value="three">{tenth_question_option_three}
+            <br><br>            
+          </form>
+        </div>
+        <div class="inner-box">
+          <div class="button-border button-margin">
+            <button type="submit">{button_title}</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <footer>
+          {footer}
+        </footer>
+      </div>
+    </div>
+    <script src="static/js/select-language.js"></script>
+  </body>
+</html>

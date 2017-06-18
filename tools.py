@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 import os
+import re
+import urlparse
 
 import constants
 
@@ -18,15 +20,16 @@ def readfile(filepath):
   return file_content
 
 
-def check_query_string(environ):
+def check_post_request(environ):
   try:
     request_body_size = int(environ.get('CONTENT_LENGTH', 0))
   except ValueError:
     request_body_size = 0
 
-  if environ['QUERY_STRING'] == 'lang=rus':
-    constants.SELECTED_LANG = 'russian'
-  elif environ['QUERY_STRING'] == 'lang=eng':
-    constants.SELECTED_LANG = 'english'
+  request_body = environ['wsgi.input'].read(request_body_size)
+  request_body = request_body.lower()
 
-  return request_body_size
+  parsed_qs = urlparse.parse_qs(request_body)
+  if 'language' in parsed_qs:
+    constants.SELECTED_LANG = parsed_qs['language'].pop()
+  return parsed_qs['answer'].pop() if 'answer' in parsed_qs else ''

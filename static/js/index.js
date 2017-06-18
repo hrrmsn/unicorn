@@ -1,4 +1,4 @@
-// Helper function definitions are here.
+// Variable definitions are here.
 
 var radioButtons = document.querySelectorAll('input');
 var radioButtonFirst = radioButtons[0];

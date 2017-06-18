@@ -1,0 +1,55 @@
+html, body {
+  background: lightblue;
+  font: 1em serif;
+  height: 97%;
+}
+
+.button-border button {
+  border: 2px solid purple;
+}
+
+.button-margin button {
+  margin: 5px;
+}
+
+img {
+  width: 15%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.box {
+  text-align: center;
+  width: 40%;
+}
+
+.footer {
+  font: .8em sans-serif;
+  /*position: absolute;*/
+  bottom: 2%;
+}
+
+.language {
+  /*position: absolute;*/
+  top: 2%;
+}
+
+.language, 
+.option {
+  font-family: 'Lato' sans-serif;
+  font-size: .9em;
+}
+
+.wsgi {
+  visibility: hidden;
+}
+
+.form {
+  text-align: left;
+}
