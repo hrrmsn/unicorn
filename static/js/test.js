@@ -4,6 +4,8 @@ var checkButton = document.querySelector('button');
 
 var radioButtons = document.querySelectorAll('input');
 
+var unicornTestForm = document.querySelector('form');
+
 var alertMessages = {
   'english': 'Please answer all questions! The unicorns believe in you.',
   'russian': 'Пожалуйста, ответьте на все вопросы! Единороги верят в вас.'
@@ -22,5 +24,7 @@ checkButton.addEventListener('click', function(e) {
   }
   if (counter < 10) {
     alert(alertMessages[getSelectedLanguage()]);
+  } else {
+    unicornTestForm.submit();
   }
 });

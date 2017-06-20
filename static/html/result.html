@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{title}</title>
+    <link rel="stylesheet" type="text/css" href="static/css/result.css">
+  </head>
+  <body>
+    <wsgi-function>result</wsgi-function>
+    <score>{score-value}</score>
+    <div class="container">
+      <div class="language">
+        <label for="language">{label}:</label>
+        <select class="option" id="language">
+          <option value="english">{select_english_option}</option>
+          <option value="russian">{select_russian_option}</option>
+        </select>
+      </div>    
+      <div class="box">
+        <img src="static/pic/{image-name}.jpg">
+        <p>{paragraph}</p>
+      </div>
+      <div class="footer">
+        <footer>
+          {footer}
+        </footer>
+      </div>
+    </div>
+    <script src="static/js/select-language.js"></script>
+    <script src="static/js/result.js"></script>
+  </body>
+</html>

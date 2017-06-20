@@ -8,6 +8,8 @@ var russianSelectOption = selectLanguage[1];
 
 var wsgiFunctionName = document.querySelector('wsgi-function').textContent;
 
+var img = document.querySelector('img');
+
 
 // Helper function definitions are here.
 
@@ -54,12 +56,15 @@ selectLanguage.addEventListener('change', function(e) {
   if (e.target.value === 'english') {
     selectedLanguage = 'english';
   }
-  requestUrl = 'http://localhost:8000/';
-  parameters = {'answer': wsgiFunctionName, 'language': selectedLanguage};
+  
+  var parameters = {'answer': wsgiFunctionName, 'language': selectedLanguage};
+  if (wsgiFunctionName === 'result') {
+    parameters['score'] = document.querySelector('score').textContent;
+  }
+
+  var requestUrl = 'http://localhost:8000/' + wsgiFunctionName;
   if (wsgiFunctionName.substring(0, 5) === 'catif') {
-    requestUrl += 'catification';
-  } else {
-    requestUrl += wsgiFunctionName;
+    requestUrl = 'http://localhost:8000/catification';
   }
   sendPostRequest(requestUrl, parameters);
 });

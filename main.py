@@ -25,42 +25,48 @@ def static(environ, start_response):
   return [response_body if file_path.endswith('.jpg') else response_body.encode(constants.UTF8)]
 
 
-def index(environ, start_response):
-  response_body = tools.readfile('static/html/index.html')
-  response_body = templates.apply('index', response_body)
+def make_response(environ, start_response, not_found=False):
+  parsed_qs = tools.check_post_request(environ)
 
-  start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
-  return [response_body.encode(constants.UTF8)]
-
-
-def not_found(environ, start_response):
-  tools.check_post_request(environ)
-
-  response_body = tools.readfile('static/html/not-found.html')
-  response_body = templates.apply('not-found', response_body)
-
-  start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
-  return [response_body.encode(constants.UTF8)]
-
-
-def catification(environ, start_response):
-  answer_type = tools.check_post_request(environ)
-
-  print 'answer_type=\'{}\''.format(answer_type)
-
+  answer_type = 'index'
+  if not_found:
+    answer_type = 'not-found'
+  elif 'answer' in parsed_qs:
+    answer_type = parsed_qs['answer'].pop()
+  
   response_template = 'static/html/catification/{}.html' if 'catif' in answer_type else 'static/html/{}.html'
+  status = constants.STATUS_NOT_FOUND if not_found else constants.STATUS_OK
 
   response_body = tools.readfile(response_template.format(answer_type))
   response_body = templates.apply(answer_type, response_body)
 
-  start_response('200 OK', tools.get_content_headers(constants.TEXT_HTML))
+  start_response(status, tools.get_content_headers(constants.TEXT_HTML))
+  return [response_body.encode(constants.UTF8)]
+
+
+def result(environ, start_response):
+  parsed_qs = tools.check_post_request(environ)
+  score = int(parsed_qs['score'].pop()) if 'score' in parsed_qs else 0
+
+  for question in parsed_qs:
+    answer = parsed_qs[question].pop() if parsed_qs[question] else ''
+    if question in constants.TEST_ANSWERS and answer in constants.TEST_ANSWERS[question]:
+      score += 1
+
+  test_result = 'result-good' if score >= constants.UNICORN_LICENSE_SCORE_LIMIT else 'result-bad'
+
+  response_body = tools.readfile('static/html/result.html')
+  response_body = templates.apply(test_result, response_body)
+  response_body = response_body.format(**{'score': score})
+
+  start_response(constants.STATUS_OK, tools.get_content_headers(constants.TEXT_HTML))
   return [response_body.encode(constants.UTF8)]
 
 
 regex_and_functions = [
-  (r'/$', index),
   (r'/static', static),
-  (r'(/greeting$)|(/catification$)|(/test$)', catification)
+  (r'(/$)|(/greeting$)|(/catification$)|(/test$)', make_response),
+  (r'/result$', result)
 ]
 
 
@@ -82,4 +88,4 @@ def application(environ, start_response):
     regex, function = regex_and_function[0], regex_and_function[1]
     if re.match(regex, environ['PATH_INFO']):
       return function(environ, start_response)
-  return not_found(environ, start_response)
+  return make_response(environ, start_response, not_found=True)

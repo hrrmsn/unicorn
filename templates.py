@@ -283,7 +283,7 @@ page_to_words['test'] = {
     'third_question_option_two': """Двадцать шесть тысяч лет.""",
     'third_question_option_three': """Бесконечность.""",
 
-'fourth_question_label': """4. Любят ли единороги единокотов?""",
+    'fourth_question_label': """4. Любят ли единороги единокотов?""",
     'fourth_question_option_one': """Да. (Тихо и неуверенно.)""",
     'fourth_question_option_two': """Конечно. (Приглушенно.)""",
     'fourth_question_option_three': """Определенно, да! О боже мой, как сильно единороги любят единокотиков! (Очень 
@@ -321,8 +321,60 @@ page_to_words['test'] = {
     'tenth_question_option_two': """Просто для удовольствия.""",
     'tenth_question_option_three': """В комнате есть единокот. <span class="red-heart">&hearts;</span>""",
 
-
     'button_title': """проверить""",
+    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
+  },
+}
+
+
+# Multilingual data for the 'result' page.
+
+page_to_words['result-good'] = {
+  'english': {
+    'title': """Congratulate!""",
+    'score-value': """{score}""",
+    'label': """language""",
+    'select_english_option': """english""",
+    'select_russian_option': """russian""",
+    'image-name': 'dancing-jake',
+    'paragraph': """You result is {score}/10. Good job! You earned your bounty! Now you are lucky owner of the 
+      unicorn's license. (Yay!)""",
+    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
+  },
+  'russian': {
+    'title': """Поздравляем!""",
+    'score-value': """{score}""",
+    'label': """язык""",
+    'select_english_option': """английский""",
+    'select_russian_option': """русский""",
+    'image-name': 'dancing-jake',
+    'paragraph': """Ваш результат: {score}/10. Отличная работа! Вы заслужили вашу награду! Теперь вы счастливый 
+      обладатель лицензии единорогов. (Ура!)""",
+    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
+  },
+}
+
+page_to_words['result-bad'] = {
+  'english': {
+    'title': """You need to learn more about the unicorns!""",
+    'score-value': """{score}""",
+    'label': """language""",
+    'select_english_option': """english""",
+    'select_russian_option': """russian""",
+    'image-name': 'sad-finn',
+    'paragraph': """You result is {score}/10. Please don't worry! You can try another 
+      <a id="pass-test-again" href="/test">attempt</a>!""",
+    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
+  },
+  'russian': {
+    'title': """Вам необходимо узнать больше о единорогах!""",
+    'score-value': """{score}""",
+    'label': """язык""",
+    'select_english_option': """английский""",
+    'select_russian_option': """русский""",
+    'image-name': 'sad-finn',
+    'paragraph': """Ваш результат: {score}/10. Пожалуйста, не беспокойтесь! Вы можете предпринять новую 
+      <a id="pass-test-again" href="/test">попытку</a>!""",
     'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   },
 }

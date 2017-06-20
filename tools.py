@@ -32,4 +32,4 @@ def check_post_request(environ):
   parsed_qs = urlparse.parse_qs(request_body)
   if 'language' in parsed_qs:
     constants.SELECTED_LANG = parsed_qs['language'].pop()
-  return parsed_qs['answer'].pop() if 'answer' in parsed_qs else ''
+  return parsed_qs
