@@ -16,9 +16,16 @@
           <option value="russian">{select_russian_option}</option>
         </select>
       </div>    
-      <div class="box">
+      <div class="button-border button-margin box">
         <img src="static/pic/{image-name}.jpg">
-        <p>{paragraph}</p>
+        <p>{paragraph_first}</p>
+
+        <div class="hide-if-bad-result">
+          <p>{paragraph_second}</p>
+          <button type="button">{button_title}</button>
+        </div>
+
+        <p>{paragraph_third}</p>
       </div>
       <div class="footer">
         <footer>

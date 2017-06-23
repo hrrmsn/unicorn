@@ -63,10 +63,29 @@ def result(environ, start_response):
   return [response_body.encode(constants.UTF8)]
 
 
+def notify(environ, start_response):
+  constants.HAVE_UNICORNS_BEEN_INFORMED = True
+
+  tools.send_email_to_me('Kotolina news', 'We would inform you that Kotolina got the unicorn\'s license successfully!')
+  start_response(constants.STATUS_OK, tools.get_content_headers(constants.TEXT_HTML))
+  return [b'']
+
+
+def is_already_informed(environ, start_response):
+  if constants.HAVE_UNICORNS_BEEN_INFORMED:
+    return ['True'.encode(constants.UTF8)]
+  
+  constants.HAVE_UNICORNS_BEEN_INFORMED = True
+  start_response(constants.STATUS_OK, tools.get_content_headers(constants.TEXT_PLANE))
+  return ['False'.encode(constants.UTF8)]
+
+
 regex_and_functions = [
   (r'/static', static),
   (r'(/$)|(/greeting$)|(/catification$)|(/test$)', make_response),
-  (r'/result$', result)
+  (r'/result$', result),
+  (r'/notify', notify),
+  (r'/is-already-informed', is_already_informed)
 ]
 
 

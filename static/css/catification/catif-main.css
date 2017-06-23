@@ -13,7 +13,7 @@ html, body {
 }
 
 img {
-  width: 20%;
+  width: 15%;
 }
 
 .container {
@@ -26,7 +26,7 @@ img {
 
 .box {
   text-align: center;
-  width: 35%;
+  width: 40%;
 }
 
 .footer {
@@ -46,6 +46,10 @@ img {
   font-size: .9em;
 }
 
-.wsgi {
+wsgi-function {
   visibility: hidden;
+}
+
+p {
+  text-align: left;
 }

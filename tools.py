@@ -3,6 +3,7 @@
 import os
 import re
 import urlparse
+import requests
 
 import constants
 
@@ -33,3 +34,13 @@ def check_post_request(environ):
   if 'language' in parsed_qs:
     constants.SELECTED_LANG = parsed_qs['language'].pop()
   return parsed_qs
+
+
+def send_email_to_me(subject, text):
+  return requests.post(
+    'https://api.mailgun.net/v3/{}/messages'.format(constants.MY_MAILGUN_DOMAIN_NAME),
+    auth=('api', constants.MY_MAILGUN_API_KEY),
+    data={'from': 'Mailgun API <mailgun@{}>'.format(constants.MY_MAILGUN_DOMAIN_NAME),
+          'to': [constants.MY_EMAIL],
+          'subject': subject,
+          'text': text})

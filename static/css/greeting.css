@@ -54,3 +54,9 @@ img {
 .wsgi {
   visibility: hidden;
 }
+
+p {
+  text-align: left;
+  width: 80%;
+  padding-left: 10%;
+}

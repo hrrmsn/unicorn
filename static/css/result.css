@@ -13,7 +13,7 @@ html, body {
 }
 
 img {
-  width: 20%;
+  width: 19%;
 }
 
 .container {
@@ -48,4 +48,8 @@ img {
 
 wsgi-function, score {
   visibility: hidden;
+}
+
+p {
+  text-align: left;
 }
