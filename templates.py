@@ -19,7 +19,6 @@ page_to_words['not-found'] = {
     'select_russian_option': """russian""",
     'paragraph_first': """Unicorns are sad because this page doesn't exist!""",
     'paragraph_second': """You can return to the <a href="/">start</a> page.""",
-    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
   },
   'russian': {
     'title': """Ой!""",
@@ -28,7 +27,6 @@ page_to_words['not-found'] = {
     'select_russian_option': """русский""",
     'paragraph_first': """Единороги грустны, потому что такой страницы не существует!""",
     'paragraph_second': """Вы можете вернуться в <a href="/">начало</a>.""",
-    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   }  
 }
 
@@ -42,7 +40,6 @@ page_to_words['index'] = {
     'input_first': """english""",
     'input_second': """russian""",
     'button_title': """send""",
-    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
   },
   'russian': {
     'title': """Привет, Котолина! :)""",
@@ -50,7 +47,6 @@ page_to_words['index'] = {
     'input_first': """английский""",
     'input_second': """русский""",
     'button_title': """клик""",
-    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   }
 }
 
@@ -70,7 +66,6 @@ page_to_words['greeting'] = {
     'radio_button_third': """No. I'm a usual person. (I use subway. I sleep and eat every day.)""",
     'radio_button_fourth': """Who is a caticorn? (You guys are crazy.)""",
     'button_title': """send""",
-    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
   },
   'russian': {
     'title': """Простая проверка.""",
@@ -84,7 +79,6 @@ page_to_words['greeting'] = {
     'radio_button_third': """Нет, я обыкновенный человек. (Езжу в метро. Ем. Сплю.)""",
     'radio_button_fourth': """Кто такой единокот? (Вы, ребята, совсем сумасшедшие.)""",
     'button_title': """клик""",
-    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   }
 }
 
@@ -94,27 +88,21 @@ page_to_words['greeting'] = {
 page_to_words['catif-whois'] = {
   'english': {
     'title': """Who are the caticorns?""",
-    'catif-type': """catif-whois""",
     'label': """language""",
     'select_english_option': """english""",
     'select_russian_option': """russian""",
-    'image-name': """who-are-the-caticorns""",
     'paragraph': """Caticorns are the magic cute creatures. They live in Catiland. They like chocolate, milk and 
       psychology. (And also they like the unicorns. And the unicorns like caticorns.)""",
     'button_title': """back""",
-    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
   },
   'russian': {
     'title': """Кто такие единокоты?""",
-    'catif-type': """catif-whois""",
     'label': """язык""",
     'select_english_option': """английский""",
     'select_russian_option': """русский""",
-    'image-name': """who-are-the-caticorns""",
     'paragraph': """Единокоты это милые волшебные существа. Они живут в Котоландии и любят шоколад, молоко, 
       психологию. (И единорогов. А единороги - их.)""",
     'button_title': """назад""",
-    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   }
 }
 
@@ -124,26 +112,21 @@ page_to_words['catif-whois'] = {
 page_to_words['catif-no'] = {
   'english': {
     'title': """Sorry, the unicorns don't like usual people.""",
-    'catif-type': """catif-no""",
     'label': """language""",
     'select_english_option': """english""",
     'select_russian_option': """russian""",
-    'image-name': """caticorn-sad""",
     'paragraph': """Oh, it's so sad that you're an usual person! Unfortunately, you should leave this place. You should 
       do your usual human chores.""",
     'button_title': """back""",
-    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
   },
   'russian': {
     'title': """Единороги не любят обычных людей.""",
     'label': """язык""",
     'select_english_option': """английский""",
     'select_russian_option': """русский""",
-    'image-name': """caticorn-sad""",
     'paragraph': """О, это так грустно, что вы обычный человек! К сожалению, вы должны покинуть это место. Вам 
       необходимо заняться обыкновенными человеческими делами.""",
     'button_title': """назад""",
-    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   }
 }
 
@@ -153,25 +136,19 @@ page_to_words['catif-no'] = {
 page_to_words['catif-maybe'] = {
   'english': {
     'title': """You don't know who are you?""",
-    'catif-type': """catif-maybe""",
     'label': """language""",
     'select_english_option': """english""",
     'select_russian_option': """russian""",
-    'image-name': """caticorn-crying""",
     'paragraph': """You need to be more opinionated. It's very important. Believe me!""",
     'button_title': """back""",
-    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
   },
   'russian': {
     'title': """Вы не знаете, кто вы?""",
-    'catif-type': """catif-maybe""",
     'label': """язык""",
     'select_english_option': """английский""",
     'select_russian_option': """русский""",
-    'image-name': """caticorn-crying""",
     'paragraph': """Вам надо быть более уверенным человеком. Это важно, поверьте мне!""",
     'button_title': """назад""",
-    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   }
 }
 
@@ -188,7 +165,6 @@ page_to_words['catif-yes'] = {
       unicorn was hurt during this test creation. Probably. We don't sure.)""",
     'button_title_first': """back""",
     'button_title_second': """start""",
-    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
   },
   'russian': {
     'title': """Ура! Наконец-то здесь потенциальный единокот!""",
@@ -199,7 +175,6 @@ page_to_words['catif-yes'] = {
       единорог не пострадал. Наверное. Мы не уверены.)""",
     'button_title_first': """назад""",
     'button_title_second': """начать""",
-    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   }
 }
 
@@ -268,7 +243,6 @@ page_to_words['test'] = {
     'tenth_question_option_three': """The caticorn is inside this room. <span class="red-heart">&hearts;</span>""",    
 
     'button_title': """check""",
-    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
   },
   'russian': {
     'title': """Покажите мне, насколько хорошо вы знаете единорогов!""",
@@ -332,7 +306,6 @@ page_to_words['test'] = {
     'tenth_question_option_three': """В комнате есть единокот. <span class="red-heart">&hearts;</span>""",
 
     'button_title': """проверить""",
-    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   },
 }
 
@@ -353,7 +326,6 @@ page_to_words['result-good'] = {
       email will be send.)""",
     'button_title': """notify""",
     'paragraph_third': """You can also back to the <a id="open-start-page" href="/">start</a> page.""",
-    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
   },
   'russian': {
     'title': """Поздравляем!""",
@@ -368,7 +340,6 @@ page_to_words['result-good'] = {
       лицензию! (Им придет электронное письмо.)""",
     'button_title': """уведомить""",
     'paragraph_third': """Вы также можете вернуться на <a id="open-start-page" href="/">стартовую</a> страницу.""",
-    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   },
 }
 
@@ -385,7 +356,6 @@ page_to_words['result-bad'] = {
     'paragraph_second': """""",
     'button_title': """""",
     'paragraph_third': """You can also back to the <a id="open-start-page" href="/">start</a> page.""",
-    'footer': """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
   },
   'russian': {
     'title': """Вам необходимо узнать больше о единорогах!""",
@@ -399,9 +369,13 @@ page_to_words['result-bad'] = {
     'paragraph_second': """""",
     'button_title': """""",
     'paragraph_third': """Вы также можете вернуться на <a id="open-start-page" href="/">стартовую</a> страницу.""",
-    'footer': """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
   },
 }
+
+
+for page_type in page_to_words:
+  page_to_words[page_type]['english']['footer'] = """&copy; 2017 Ivan, Lina &amp; Unicorns Ltd. All rights reserved."""
+  page_to_words[page_type]['russian']['footer'] = """&copy; 2017 ОАО Иван, Лина &amp; Единороги. Все права защищены."""
 
 
 def apply(page_name, page_html):

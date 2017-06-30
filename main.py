@@ -33,6 +33,15 @@ def make_response(environ, start_response, not_found=False):
     answer_type = 'not-found'
   elif 'answer' in parsed_qs:
     answer_type = parsed_qs['answer'].pop()
+
+  response_template = 'static/html/{}.html'
+  if 'catif' in answer_type:
+    if 'yes' in answer_type:
+      response_template = 'static/html/catification/catif-yes.html'
+    else:
+      response_template = 'static/html/catification/catif-main.html'
+
+      
   
   response_template = 'static/html/catification/{}.html' if 'catif' in answer_type else 'static/html/{}.html'
   status = constants.STATUS_NOT_FOUND if not_found else constants.STATUS_OK

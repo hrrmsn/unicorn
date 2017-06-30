@@ -38,3 +38,9 @@ MY_MAILGUN_DOMAIN_NAME = base64.b64decode(MY_MAILGUN_DOMAIN_NAME_ENCODED)
 MY_MAILGUN_API_KEY = base64.b64decode(MY_MAILGUN_API_KEY_ENCODED)
 
 HAVE_UNICORNS_BEEN_INFORMED = False
+
+IMAGE_NAMES_BY_CATIF_TYPE = {
+  'catif-maybe': 'caticorn-crying',
+  'catif-no': 'caticorn-sad',
+  'catif-whois': 'who-are-the-caticorns'
+}
