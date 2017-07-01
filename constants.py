@@ -39,8 +39,8 @@ MY_MAILGUN_API_KEY = base64.b64decode(MY_MAILGUN_API_KEY_ENCODED)
 
 HAVE_UNICORNS_BEEN_INFORMED = False
 
-IMAGE_NAMES_BY_CATIF_TYPE = {
-  'catif-maybe': 'caticorn-crying',
-  'catif-no': 'caticorn-sad',
-  'catif-whois': 'who-are-the-caticorns'
+IMAGE_NAMES_WITH_CATIF_TYPES = {
+  'catif-maybe': {'catif-type': 'catif-maybe', 'image-name': 'caticorn-crying'},
+  'catif-no': {'catif-type': 'catif-no', 'image-name': 'caticorn-sad'},
+  'catif-whois': {'catif-type': 'catif-whois', 'image-name': 'who-are-the-caticorns'}
 }

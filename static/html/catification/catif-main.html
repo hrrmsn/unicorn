@@ -4,30 +4,30 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="static/css/catification/catif-main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <title>{title}</title>
+    <title>{{title}}</title>
   </head>
   <body>
     <wsgi-function>{catif-type}</wsgi-function>
     <div class="container">
       <div class="language">
-        <label for="language">{label}:</label>
+        <label for="language">{{label}}:</label>
         <select class="option" id="language">
-          <option value="english">{select_english_option}</option>
-          <option value="russian">{select_russian_option}</option>
+          <option value="english">{{select_english_option}}</option>
+          <option value="russian">{{select_russian_option}}</option>
         </select>
       </div>
       <div class="box">
         <img src="static/pic/catification/{image-name}.jpg">
-        <p>{paragraph}</p>
+        <p>{{paragraph}}</p>
         <div class="inner-box">
           <div class="button-border">
-            <button>{button_title}</button>
+            <button>{{button_title}}</button>
           </div>
         </div>
       </div>
       <div class="footer">
         <footer>
-          {footer}
+          {{footer}}
         </footer>
       </div>
     </div>

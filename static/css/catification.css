@@ -1,6 +1,5 @@
 img {
   width: 15%;
-  margin: 2%;
 }
 
 wsgi-function {
@@ -20,22 +19,20 @@ p {
   margin: 5px;
 }
 
+.container {
+  height: 80%;
+}
+
 .box {
-  width: 38%;
+  width: 40%;
 }
 
 .footer {
-  margin-bottom: 1%;
+  position: absolute;
+  bottom: 2%;
 }
 
 .language {
-  margin-top: -1%;
-}
-
-.form {
-  text-align: left;
-}
-
-.red-heart {
-  color: red;
+  position: absolute;
+  top: 2%;
 }

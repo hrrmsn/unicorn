@@ -1,9 +1,3 @@
-html, body {
-  background: lightblue;
-  font: 1em serif;
-  height: 97%;
-}
-
 button {
   border: 2px solid purple;
 }
@@ -12,16 +6,26 @@ img {
   width: 14%;
 }
 
+wsgi-function {
+  visibility: hidden;
+}
+
+p {
+  text-align: left;
+  width: 80%;
+  padding-left: 10%;
+}
+
+
+.button {
+  padding-left: 40%;
+}
+
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 80%;
 }
 
 .box {
-  text-align: center;
   width: 50%;
 }
 
@@ -30,12 +34,7 @@ img {
   padding-left: 10%;
 }
 
-.button {
-  padding-left: 40%;
-}
-
 .footer {
-  font: .8em sans-serif;
   position: absolute;
   bottom: 2%;
 }
@@ -43,20 +42,4 @@ img {
 .language {
   position: absolute;
   top: 2%;
-}
-
-.language, 
-.option {
-  font-family: 'Lato' sans-serif;
-  font-size: .9em;
-}
-
-.wsgi {
-  visibility: hidden;
-}
-
-p {
-  text-align: left;
-  width: 80%;
-  padding-left: 10%;
 }
