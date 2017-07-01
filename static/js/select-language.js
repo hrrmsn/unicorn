@@ -8,7 +8,7 @@ var russianSelectOption = selectLanguage[1];
 
 var wsgiFunctionName = document.querySelector('wsgi-function').textContent;
 
-var img = document.querySelector('img');
+var mainUrl = 'http://localhost:8000/';
 
 
 // Helper function definitions are here.
@@ -62,9 +62,9 @@ selectLanguage.addEventListener('change', function(e) {
     parameters['score'] = document.querySelector('score').textContent;
   }
 
-  var requestUrl = 'http://localhost:8000/' + wsgiFunctionName;
+  var requestUrl = mainUrl + wsgiFunctionName;
   if (wsgiFunctionName.substring(0, 5) === 'catif') {
-    requestUrl = 'http://localhost:8000/catification';
+    requestUrl = mainUrl + 'catification';
   }
   sendPostRequest(requestUrl, parameters);
 });

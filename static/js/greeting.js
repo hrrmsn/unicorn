@@ -4,7 +4,7 @@ var radioButtons = document.querySelectorAll('input');
 var radioButtonsForm = document.querySelector('form');
 var submitButton = document.querySelector('button');
 
-alertMessages = {
+var alertMessages = {
   'send': 'You should choose an answer. Make up your mind!',
   'клик': 'Необходимо что-нибудь выбрать. Решайтесь!'
 }

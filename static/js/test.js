@@ -1,17 +1,13 @@
 // Variable declarations here.
 
 var checkButton = document.querySelector('button');
-
 var radioButtons = document.querySelectorAll('input');
-
 var unicornTestForm = document.querySelector('form');
 
 var alertMessages = {
   'english': 'Please answer all questions! The unicorns believe in you.',
   'russian': 'Пожалуйста, ответьте на все вопросы! Единороги верят в вас.'
 }
-
-// Helpful function definitions are here.
 
 
 // Add event listeners here.

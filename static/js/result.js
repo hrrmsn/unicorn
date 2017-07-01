@@ -35,7 +35,7 @@ if (passTestAgainLink) {
   passTestAgainLink.addEventListener('click', function(e) {
     e.preventDefault();
 
-    var requestUrl = 'http://localhost:8000/test';
+    var requestUrl = mainUrl + 'test';
     var parameters = {'answer': 'test', 'language': getSelectedLanguage()};
     sendPostRequest(requestUrl, parameters);
   });

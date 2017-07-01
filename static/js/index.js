@@ -8,7 +8,7 @@ var radioButtonsForm = document.querySelector('form');
 
 var submitButton = document.querySelector('button')
 
-alert_messages = {
+var alertMessages = {
   'send': 'You should choose a language.',
   'клик': 'Необходимо выбрать какой-нибудь язык.'
 }
@@ -19,7 +19,7 @@ alert_messages = {
 radioButtonsForm.addEventListener('submit', function(e) {
   if (!radioButtonFirst.checked && !radioButtonSecond.checked) {
     buttonText = submitButton.textContent || submitButton.innerText;
-    alert(alert_messages[buttonText]);
+    alert(alertMessages[buttonText]);
     e.preventDefault();
   }
 });
