@@ -1,7 +1,6 @@
 // Variable declarations are here.
 
 var passTestAgainLink = document.getElementById('pass-test-again');
-
 var notifyUnicornsButton = document.querySelector('button');
 
 var thankYouAlertMessages = {
@@ -29,7 +28,6 @@ window.addEventListener('load', function(e) {
     }
   }
 });
-
 
 if (passTestAgainLink) {
   passTestAgainLink.addEventListener('click', function(e) {

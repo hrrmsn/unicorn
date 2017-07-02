@@ -380,7 +380,7 @@ for page_type in page_to_words:
 
 def apply(page_name, page_html):
   page_dictionary = page_to_words[page_name]
-  in_specified_lang = page_dictionary[constants.SELECTED_LANG]
+  page_in_specified_lang = page_dictionary[constants.SELECTED_LANG]
   if constants.SELECTED_LANG == 'russian':
-    in_specified_lang = {key: value.decode(constants.UTF8) for key, value in in_specified_lang.items()}
-  return page_html.format(**in_specified_lang)
+    page_in_specified_lang = {key: value.decode(constants.UTF8) for key, value in page_in_specified_lang.items()}
+  return page_html.format(**page_in_specified_lang)

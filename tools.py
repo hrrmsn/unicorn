@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
 import os
-import re
 import urlparse
 import requests
 
 import constants
+
 
 # Helper functions.
 

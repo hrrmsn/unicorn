@@ -6,7 +6,7 @@ var radioButtonSecond = radioButtons[1];
 
 var radioButtonsForm = document.querySelector('form');
 
-var submitButton = document.querySelector('button')
+var submitButton = document.querySelector('button');
 
 var alertMessages = {
   'send': 'You should choose a language.',

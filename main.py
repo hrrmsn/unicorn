@@ -38,35 +38,30 @@ def make_response(environ, start_response, not_found=False):
   if 'catif' in answer_type:
     response_template = 'static/html/catification'
     response_template += '/catif-yes.html' if 'yes' in answer_type else '/catif-main.html'
-
-  status = constants.STATUS_NOT_FOUND if not_found else constants.STATUS_OK
-
+  
   response_body = tools.readfile(response_template.format(answer_type))
-
   if response_template.endswith('catif-main.html'):
-    print 'formatting catif-main.html with answer-type=\'{}\''.format(answer_type)
     response_body = response_body.format(**constants.IMAGE_NAMES_WITH_CATIF_TYPES[answer_type])
-
   response_body = templates.apply(answer_type, response_body)
 
+  status = constants.STATUS_NOT_FOUND if not_found else constants.STATUS_OK
   start_response(status, tools.get_content_headers(constants.TEXT_HTML))
   return [response_body.encode(constants.UTF8)]
 
 
 def result(environ, start_response):
   parsed_qs = tools.check_post_request(environ)
-  score = int(parsed_qs['score'].pop()) if 'score' in parsed_qs else 0
+  scoreValue = int(parsed_qs['score'].pop()) if 'score' in parsed_qs else 0
 
   for question in parsed_qs:
     answer = parsed_qs[question].pop() if parsed_qs[question] else ''
     if question in constants.TEST_ANSWERS and answer in constants.TEST_ANSWERS[question]:
-      score += 1
-
-  test_result = 'result-good' if score >= constants.UNICORN_LICENSE_SCORE_LIMIT else 'result-bad'
+      scoreValue += 1
 
   response_body = tools.readfile('static/html/result.html')
+  test_result = 'result-good' if scoreValue >= constants.UNICORN_LICENSE_SCORE_LIMIT else 'result-bad'
   response_body = templates.apply(test_result, response_body)
-  response_body = response_body.format(**{'score': score})
+  response_body = response_body.format(score=scoreValue)
 
   start_response(constants.STATUS_OK, tools.get_content_headers(constants.TEXT_HTML))
   return [response_body.encode(constants.UTF8)]
@@ -74,18 +69,15 @@ def result(environ, start_response):
 
 def notify(environ, start_response):
   constants.HAVE_UNICORNS_BEEN_INFORMED = True
-
   tools.send_email_to_me('Kotolina news', 'We would inform you that Kotolina got the unicorn\'s license successfully!')
   start_response(constants.STATUS_OK, tools.get_content_headers(constants.TEXT_HTML))
   return [b'']
 
 
 def is_already_informed(environ, start_response):
+  start_response(constants.STATUS_OK, tools.get_content_headers(constants.TEXT_PLANE))
   if constants.HAVE_UNICORNS_BEEN_INFORMED:
     return ['True'.encode(constants.UTF8)]
-  
-  constants.HAVE_UNICORNS_BEEN_INFORMED = True
-  start_response(constants.STATUS_OK, tools.get_content_headers(constants.TEXT_PLANE))
   return ['False'.encode(constants.UTF8)]
 
 

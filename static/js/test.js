@@ -11,14 +11,15 @@ var alertMessages = {
 
 
 // Add event listeners here.
+
 checkButton.addEventListener('click', function(e) {
-  var counter = 0;
+  var selectedRadioButtonsNumber = 0;
   for (var i = 0, len = radioButtons.length; i < len; i++) {
     if (radioButtons[i].checked) {
-      counter++;
+      selectedRadioButtonsNumber++;
     }
   }
-  if (counter < 10) {
+  if (selectedRadioButtonsNumber < 10) {
     alert(alertMessages[getSelectedLanguage()]);
   } else {
     unicornTestForm.submit();
