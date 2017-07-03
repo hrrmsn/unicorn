@@ -1,8 +1,17 @@
 html, body {
   background: lightblue;
-  font: 1em serif;
+  font: .95em serif;
   height: 97%;
 }
+
+button {
+  font-size: .87em;
+}
+
+input[type=radio] {
+-webkit-transform: scale(0.8, 0.8);
+}
+
 
 .container {
   display: flex;
@@ -16,11 +25,11 @@ html, body {
 }
 
 .footer {
-  font: .8em sans-serif;
+  font: .87em sans-serif;
 }
 
 .language, 
 .option {
   font-family: 'Lato' sans-serif;
-  font-size: .9em;
+  font-size: .93em;
 }

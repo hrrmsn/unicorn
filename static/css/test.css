@@ -21,15 +21,15 @@ p {
 }
 
 .box {
-  width: 38%;
+  width: 45%;
 }
 
 .footer {
-  margin-bottom: 1%;
+  margin-bottom: 1.1em;
 }
 
 .language {
-  margin-top: -1%;
+  margin-top: -1.1em;
 }
 
 .form {
