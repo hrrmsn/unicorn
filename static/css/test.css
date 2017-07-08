@@ -7,10 +7,6 @@ wsgi-function {
   visibility: hidden;
 }
 
-p {
-  text-align: left;
-}
-
 
 .button-border button {
   border: 2px solid purple;
@@ -20,15 +16,21 @@ p {
   margin: 5px;
 }
 
+.text {
+  width: 100%;
+}
+
 .box {
   width: 45%;
 }
 
 .footer {
+  position: static;
   margin-bottom: 1.1em;
 }
 
 .language {
+  position: static;
   margin-top: -1.1em;
 }
 

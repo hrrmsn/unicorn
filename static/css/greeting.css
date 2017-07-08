@@ -10,36 +10,27 @@ wsgi-function {
   visibility: hidden;
 }
 
-p {
-  text-align: left;
-  width: 80%;
-  padding-left: 10%;
-}
-
-
-.button {
-  padding-left: 40%;
-}
 
 .container {
   height: 80%;
 }
 
 .box {
-  width: 55%;
+  width: 40%;
+  text-align: left;
+}
+
+.text {
+  width: 100%;
 }
 
 .inner-box {
+  display: inline-block;
   text-align: left;
-  padding-left: 10%;
+  width: 100%;
 }
 
-.footer {
-  position: absolute;
-  bottom: 2%;
-}
-
-.language {
-  position: absolute;
-  top: 2%;
+.button,
+.image {
+  text-align: center;
 }

@@ -11,16 +11,6 @@ img {
   height: 80%;
 }
 
-.box {
-  width: 35%;
-}
-
-.footer {
-  position: absolute;
-  bottom: 2%;
-}
-
-.language {
-  position: absolute;
-  top: 2%;
+.text {
+  text-align: center;
 }

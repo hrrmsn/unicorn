@@ -22,17 +22,3 @@ p {
 .container {
   height: 80%;
 }
-
-.box {
-  width: 45%;
-}
-
-.footer {
-  position: absolute;
-  bottom: 2%;
-}
-
-.language {
-  position: absolute;
-  top: 2%;
-}

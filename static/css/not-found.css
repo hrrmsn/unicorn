@@ -1,32 +1,12 @@
 img {
-  width: 16%;
+  width: 10%;
 }
 
 wsgi-function {
   visibility: hidden;
 }
 
-p {
-  text-align: left;
-  width: 100%;
-  padding-left: 10%;
-}
-
 
 .container {
   height: 80%;
-}
-
-.box {
-  width: 35%;
-}
-
-.footer {
-  position: absolute;
-  bottom: 2%;
-}
-
-.language {
-  position: absolute;
-  top: 2%;
 }

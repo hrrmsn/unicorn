@@ -1,15 +1,19 @@
 img {
-  width: 19%;
+  width: 16%;
 }
 
 wsgi-function, score {
   visibility: hidden;
 }
 
-p {
-  text-align: left;
+
+.container {
+  height: 80%;
 }
 
+.box {
+  width: 40%;
+}
 
 .button-border button {
   border: 2px solid purple;
@@ -19,20 +23,6 @@ p {
   margin: 5px;
 }
 
-.container {
-  height: 80%;
-}
-
-.box {
-  width: 35%;
-}
-
-.footer {
-  position: absolute;
-  bottom: 2%;
-}
-
-.language {
-  position: absolute;
-  top: 2%;
+.hide-if-bad-result > .text {
+  margin: 0 auto;
 }
