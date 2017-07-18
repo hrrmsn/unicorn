@@ -1,5 +1,5 @@
 img {
-  width: 15%;
+  width: 12%;
 }
 
 wsgi-function {
@@ -10,6 +10,10 @@ p {
   text-align: left;
 }
 
+
+.box {
+  width: 55%;
+}
 
 .button-border button {
   border: 2px solid purple;

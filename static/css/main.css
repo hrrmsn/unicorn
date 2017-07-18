@@ -25,22 +25,16 @@ input[type=radio] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /*border: 1px solid black;*/
 }
 
 .text {
   text-align: left;
   width: 80%;
-
-  /*border: 1px dashed red;*/
 }
 
 .box {
   text-align: center;
   width: 50%;
-
-  /*border: 1px solid blue;*/
 }
 
 .box > .text {
