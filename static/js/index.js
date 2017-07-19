@@ -9,7 +9,7 @@ var radioButtonsForm = document.querySelector('form');
 var submitButton = document.querySelector('button');
 
 var alertMessages = {
-  'send': 'You should choose a language.',
+  'click': 'You should choose a language.',
   'клик': 'Необходимо выбрать какой-нибудь язык.'
 }
 

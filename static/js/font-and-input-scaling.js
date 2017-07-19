@@ -1,7 +1,18 @@
+// Variable declarations are here.
+
+var radioButtons = document.getElementsByTagName('input');
+
+
 // Helpful functions declaration.
 
 function isFirefox() {
   return typeof InstallTrigger !== 'undefined';
+}
+
+function setWebkitTransformToElements(elements, value) {
+  for (var i = 0, len = elements.length; i < len; i++) {
+    elements[i].style.webkitTransform = value;
+  }
 }
 
 function setFontSizeToElements(elements, fontSize) {
@@ -28,11 +39,13 @@ window.addEventListener('load', function(e) {
     setFontSizeByClassName('option', '.9em');
     setFontSizeByClassName('box', '.96em');
     setFontSizeByTagName('button', '.9em');
-    setFontSizeByClassName('footer', '.85em');    
+    setFontSizeByClassName('footer', '.85em');
+    setWebkitTransformToElements(radioButtons, 'scale(0.65, 0.65)');
   } else {
     setFontSizeByClassName('option', '.95em');
     setFontSizeByClassName('box', '1.1em');
     setFontSizeByTagName('button', '.8em');
     setFontSizeByClassName('footer', '1em');
+    setWebkitTransformToElements(radioButtons, 'scale(0.9, 0.9)');
   }
 });

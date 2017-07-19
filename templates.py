@@ -39,7 +39,7 @@ page_to_words['index'] = {
     'paragraph': """Please select preferable language.""",
     'input_first': """english""",
     'input_second': """russian""",
-    'button_title': """send""",
+    'button_title': """click""",
   },
   'russian': {
     'title': """Привет, Котолина! :)""",
@@ -65,7 +65,7 @@ page_to_words['greeting'] = {
     'radio_button_second': """Maybe I'm a caticorn. I don't know exactly. (What's going on?)""",
     'radio_button_third': """No. I'm a usual person. (I use subway. I sleep and eat every day.)""",
     'radio_button_fourth': """Who is a caticorn? (You guys are crazy.)""",
-    'button_title': """send""",
+    'button_title': """click""",
   },
   'russian': {
     'title': """Простая проверка.""",
